@@ -1,0 +1,63 @@
+/* Common forms css start by Nabil  */
+.gform_fields input[type="text"],
+.gform_fields input.large,
+.gform_fields input.medium,
+.gform_fields select,
+.gform_fields textarea,
+.ginput_card_field {
+  height: 44px !important;
+  border-radius: 8px;
+  border: 1px solid #caced8;
+  background: #fff;
+  color: #2b354e !important;
+  font-family: "Manrope", Sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.6px;
+  padding: 12px !important;
+  outline: none;
+}
+.gform_fields select {
+  padding: 0 12px !important;
+}
+.gform_fields textarea {
+  height: 150px !important;
+}
+.gform_fields .button,
+.gform_footer input[type="submit"] {
+  padding: 0 25px;
+  height: 42px;
+  font-family: "Manrope", Sans-serif;
+  font-size: 16px !important;
+  font-weight: 600;
+}
+.gform_fields .gfield_label {
+  margin: 0 0 8px;
+  color: #2b354e !important;
+  font-family: "Manrope", Sans-serif;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height: 19.6px;
+}
+.gform_fields .gform-field-label--type-inline,
+.gform_fields .gform-field-label--type-sub {
+  margin: 0 0 8px;
+  color: #2b354e;
+  font-family: "Manrope", Sans-serif;
+  font-size: 16px !important;
+  font-weight: 400;
+}
+.gform_fields input.gform-text-input-reset,
+.gform_fields .ginput_total {
+  padding: 0 !important;
+  color: #2b354e !important;
+  font-family: "Manrope", Sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400;
+  height: auto !important;
+}
+.gform_fields input.ginput_product_price {
+  border: 0;
+  padding-left: 8px !important;
+}
+/* Common forms css end by Nabil  */

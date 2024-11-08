@@ -1,0 +1,175 @@
+.a2n_search-form ul {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  width: 570px;
+  height: 72px;
+  background: #fff;
+  fill: #fff;
+  stroke: rgba(171, 206, 228, 0.3);
+  stroke-width: 3px;
+  filter: drop-shadow(
+    0px 4.217228412628174px 21.08614158630371px rgba(236, 238, 255, 0.5)
+  );
+  border-radius: 50px;
+}
+.a2n_search-form ul > li:first-child {
+  width: 60%;
+}
+.a2n_search-form ul > li:last-child {
+  width: 30%;
+}
+.a2n_search-form ul #s {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid white !important;
+  border-radius: 10px;
+  max-width: 400px;
+}
+.a2n_search-form ul li:first-child::before {
+  content: url("https://coursecloud.org/wp-content/uploads/2023/11/Vector-1.svg");
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.a2n_search-form ul #s::placeholder {
+  color: #6c778a;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.a2n_search-form #searchsubmit {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 32px;
+  background: linear-gradient(90deg, #004680 0%, #4484ba 100%);
+  padding: 20px 40px;
+  border: none;
+  transition: 0.3s ease-in;
+}
+.a2n_search-form #searchsubmit:hover {
+  color: #004680;
+  background: transparent;
+  border: 1px solid #004680;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .a2n_search-form ul {
+    width: 100%;
+    padding: 4px;
+    overflow: hidden;
+  }
+  .a2n_search-form ul #searchsubmit {
+    padding: 8px 22px 8px 22px !important;
+    font-size: 14px;
+    line-height: 100%; /* 21.6px */
+  }
+  .a2n_search-form ul #s::placeholder {
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
+
+/* course slider css start  */
+.a2n_course-card .elementor-swiper-button {
+  width: 65px;
+  height: 65px;
+  font-size: 40px;
+  color: #004680;
+  background: transparent;
+  border: 3px solid #004680;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+.a2n_course-card .elementor-swiper-button svg {
+  fill: #004680;
+}
+.a2n_course-card .elementor-swiper-button svg:hover {
+  fill: #fff;
+}
+.a2n_course-card .elementor-swiper-button:hover {
+  background: #004680;
+}
+.a2n_course-card .elementor-swiper-button:hover svg {
+  fill: #fff;
+}
+.a2n_course-card .elementor-swiper-button.elementor-swiper-button-prev {
+  left: -100px;
+}
+.a2n_course-card .elementor-swiper-button.elementor-swiper-button-next {
+  right: -100px;
+}
+.a2n_course-card .elementor-main-swiper {
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .a2n_course-card .elementor-main-swiper {
+    width: calc(100% - 100px);
+  }
+  .a2n_course-card .elementor-swiper-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #004680;
+    background: transparent;
+    border: 2px solid #004680;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+  }
+
+  .a2n_course-card .elementor-swiper-button.elementor-swiper-button-prev {
+    left: 0px;
+  }
+  .a2n_course-card .elementor-swiper-button.elementor-swiper-button-next {
+    right: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .a2n_course-card .elementor-swiper-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #004680;
+    background: transparent;
+    border: 2px solid #004680;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+  }
+  .a2n_course-card .elementor-swiper-button.elementor-swiper-button-prev {
+    left: 80px;
+  }
+  .a2n_course-card .elementor-swiper-button.elementor-swiper-button-next {
+    right: 80px;
+  }
+  .a2n_course-card .elementor-swiper-button.elementor-swiper-button-prev,
+  .a2n_course-card .elementor-swiper-button.elementor-swiper-button-next {
+    top: -45px;
+  }
+  .a2n_course-card .elementor-main-swiper {
+    width: 100%;
+  }
+  .a2n_course-card .bundle-container {
+    max-width: 100%;
+  }
+}
+
+/* course slider css End*/

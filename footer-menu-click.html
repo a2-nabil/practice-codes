@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>footer</title>
+  </head>
+  <body>
+    <div>
+      <div id="a2nLinks">Links</div>
+      <div class="a2nLink_item">
+        <a href="#">About Us</a>
+      </div>
+      <div class="a2nLink_item">
+        <a href="https://coursecloud.org/contact-us/">Contact Us</a>
+      </div>
+      <div class="a2nLink_item">
+        <a href="/business-contact/">Business Contact</a>
+      </div>
+      <div class="a2nLink_item">
+        <a href="https://coursecloud.org/redeem-voucher/">Redeem Voucher</a>
+      </div>
+      <div class="a2nLink_item">
+        <a href="https://coursecloud.org/certificate/"
+          >Certificate &amp; Transcript</a
+        >
+      </div>
+      <div class="a2nLink_item">
+        <a href="https://coursecloud.org/student-id-card/">Student ID Card</a>
+      </div>
+      <div class="a2nLink_item"><a href="#">Affidivation</a></div>
+    </div>
+    <div>
+      <div id="a2nExplore">Links</div>
+      <div class="a2nExplore_item">
+        <a href="#">About Us</a>
+      </div>
+      <div class="a2nExplore_item">
+        <a href="https://coursecloud.org/contact-us/">Contact Us</a>
+      </div>
+      <div class="a2nExplore_item">
+        <a href="/business-contact/">Business Contact</a>
+      </div>
+      <div class="a2nExplore_item">
+        <a href="https://coursecloud.org/redeem-voucher/">Redeem Voucher</a>
+      </div>
+    </div>
+    <style>
+      .toggle-icon {
+        transition: transform 0.3s ease;
+      }
+      .rotate-icon {
+        transform: rotate(-180deg);
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function initializeToggle(toggleElementId, itemsClass) {
+          const linksToggle = document.getElementById(toggleElementId);
+          const linkItems = document.querySelectorAll(`.${itemsClass}`);
+
+          // SVG markup as a string
+          const svgIcon = `
+              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                <rect y="0.955078" width="15" height="15" rx="2.5" fill="white"/>
+                <path d="M12.5 7.63574L7.5 11.3857L2.5 7.63574" stroke="#000241" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>`;
+
+          function toggleLinks() {
+            const allVisible = Array.from(linkItems).every(
+              (item) => item.style.display === "block"
+            );
+
+            linkItems.forEach((item) => {
+              item.style.display = allVisible ? "none" : "block";
+            });
+
+            // Toggle rotation class on SVG
+            const svgElement = linksToggle.querySelector(".toggle-icon");
+            if (svgElement) {
+              svgElement.classList.toggle("rotate-icon", !allVisible);
+            }
+          }
+
+          function initializeLinks() {
+            if (window.innerWidth <= 767) {
+              // Hide items and add click event for mobile
+              linkItems.forEach((item) => {
+                item.style.display = "none";
+              });
+              linksToggle.addEventListener("click", toggleLinks);
+
+              // Add SVG if it hasn't been added already
+              if (!linksToggle.querySelector(".toggle-icon")) {
+                linksToggle.insertAdjacentHTML("beforeend", svgIcon);
+              }
+            } else {
+              // Show items and remove click event for desktop
+              linkItems.forEach((item) => {
+                item.style.display = "";
+              });
+              linksToggle.removeEventListener("click", toggleLinks);
+
+              // Remove SVG on larger screens
+              const svgElement = linksToggle.querySelector(".toggle-icon");
+              if (svgElement) {
+                svgElement.remove();
+              }
+            }
+          }
+
+          initializeLinks();
+          window.addEventListener("resize", initializeLinks);
+        }
+
+        // Initialize toggle for #a2nLinks and .a2nLink_item
+        initializeToggle("a2nLinks", "a2nLink_item");
+        initializeToggle("a2nExplore", "a2nExplore_item");
+      });
+    </script>
+
+    
+  </body>
+</html>

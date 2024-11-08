@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ukhf copy</title>
+    <style>
+      #demo {
+        color: #2c2424 !important ;
+        text-transform: capitalize;
+        text-align: center;
+      }
+
+      .copyBox-fa {
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 58px;
+        border-radius: 48.46px;
+        border: 1.111px solid #dedede;
+        background: #fff;
+        padding-right: 5px;
+      }
+
+      .copyBox-fa .a2n-copy-icon {
+        margin: 2px;
+        padding: 16px 20px;
+        border-right: 1px solid #DEDEDE;
+        filter: grayscale(1);
+      }
+
+      input#myInput {
+        width: 84% !important;
+        border: none;
+        height: 100%;
+        text-align: left;
+        border-radius: 10px !important;
+        color: #2b354e;
+        text-align: center;
+        font-family: "Merienda", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: normal;
+        padding-left: 24px;
+      }
+
+      button.rzinput2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        background: #d85700;
+        border: none;
+        height: 90%;
+        width: 30% !important;
+        border-radius: 10px !important;
+        font-family: "Inter";
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      @media (max-width: 767px) {
+        .copyBox-fa {
+          margin: auto;
+        }
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 767px) {
+        #demo {
+          text-align: center;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+
+        .copyBox-fa {
+          margin: 0 auto;
+        }
+
+        .copyBox-fa .a2n-copy-icon {
+          padding: 16px 10px;
+        }
+
+        input#myInput {
+          width: 74% !important;
+        }
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .copyBox-fa {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a2n-copy-portion">
+      <div class="copyBox-fa">
+        <img
+          decoding="async"
+          class="a2n-copy-icon"
+          src="https://uk.hfonline.org/wp-content/uploads/2024/01/Promo-Code.png"
+        />
+
+        <input
+          id="myInput"
+          class="rzinput1"
+          type="text"
+          value="LUCKY"
+          readonly=""
+        />
+
+        <button class="rzinput2" onclick=" myFunction()">
+          <img
+            decoding="async"
+            src="https://uk.hfonline.org/wp-content/uploads/2024/01/Hero-Copy-Icon.png"
+          />
+        </button>
+      </div>
+    </div>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.getElementById("demo").innerHTML =
+          "Congratulation! You Have Copied This Coupon. ";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Button</title>
+</head>
+<body>
+    <style>
+        .a2n_copy-card .coupon-icon {
+          height: 100%;
+          width: 50px;
+          text-align: center;
+          border-right: 1.33174px solid #E3E9FD;
+        }
+        
+        .a2n_copy-card .coupon-icon img {
+          padding-top: 16px;
+          padding-right: 10px;
+        }
+        
+        .a2n_copy-card button#btnTest1 img {
+          margin-top: -4px;
+          padding-right: 5px;
+          display: inline-block;
+        }
+        
+        .a2n_copy-card button#btnTest1 span {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        
+        
+        .a2n_copy-card .foy-button {
+          width:100%;
+          max-width: 384px;
+          height: 60px;
+          border-radius: 50px;
+          border: 1.056px solid rgba(66, 104, 237, 0.22);
+          background: #FFF;
+          display: flex;
+          align-items: center;
+          background-color: #fff !important;
+          padding: 0 10px;
+          overflow: hidden;
+        }
+         
+        .a2n_copy-card input#fTest1 { 
+          width: 70%;
+          color: #053956;
+          font-family: Plus Jakarta Sans;
+          font-size: 21px;
+          font-style: normal;
+          font-weight: 700;
+          align-items: center;
+          text-align: center;
+          background: #FFFFFF;
+          box-sizing: border-box;
+          border: transparent !important;
+          border-radius: 8px 0px 0px 8px;
+        }
+        
+        .a2n_copy-card button#btnTest1 {
+          border: none;
+          width: 30%;
+          height: 46px !important;
+          border-radius: 57px;
+          border: 0.5px solid #D6DEFB;
+          background: #E9FFFF;
+          color: #053956;
+          text-align: center;
+          font-family: Plus Jakarta Sans;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          display: flex;
+          column-gap: 5px;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        
+        .a2n_copy-card #demo1 {
+          font-family: "poppins";
+          font-style: normal;
+          font-weight: 500 !important;
+          font-size: 14px;
+          line-height: 30px;
+          margin-top: 10px;
+          color: #FFF;
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+          .a2n_copy-card .foy-button {
+            width: 90%;
+          }
+          .a2n_copy-card input#fTest {
+              height: 45px !important;
+              width: 70%;
+          }
+          .a2n_copy-card button#btnTest {
+            height: 45px !important;
+            font-weight: 500;
+            width: 30%;
+          }
+          .a2n_copy-card button#btnTest1 {
+              width: 40%;
+            
+            }
+          
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+          .a2n_copy-card .foy-button{
+              max-width: 100%;
+              margin: 0 auto;
+          }
+          .a2n_copy-card button#btnTest {
+                height: 45px !important;
+                font-weight: 500;
+              }
+          .a2n_copy-card .foy-button {
+                width: 100% !important;
+                margin: 0 auto;
+                
+            }
+            .a2n_copy-card button#btnTest1 {
+              width: 50%;
+            
+            }
+        
+        }
+        
+        </style>
+        <div class="a2n_copy-card">
+        
+        <div class="foy-button">
+          <div class="coupon-icon">
+             <img src="https://intern01.wpenginepowered.com/wp-content/uploads/2023/10/Promo-Code.png">
+          </div>
+          <input id="fTest1" type="text" value="COUPON" readonly="">
+          <button onclick="myFunction()" id="btnTest1"><i aria-hidden="true" class="far fa-copy"></i> <span>Copy</span></button>
+        </div>
+        <p id="demo1"></p>
+        </div>
+        <script type="text/javascript">
+            const fTest1 = document.getElementById("fTest1");
+            const btnTest1 = document.getElementById("btnTest1");
+            
+            btnTest1.onclick = function() {
+                
+                fTest1.select();
+                document.execCommand("Copy");
+                document.getElementById("demo1").innerHTML = "Congratulations! You've copied this coupon.";
+            };
+        </script>
+    
+</body>
+</html>

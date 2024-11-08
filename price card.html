@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #a2n_card_container {
+        background: url(https://intern01.wpenginepowered.com/wp-content/uploads/2023/10/Frame-1000003796.png);
+        background-position: center;
+        background-size: cover;
+        padding: 36px 33px 25px 33px;
+        text-align: center;
+        border-radius: 20px;
+      }
+      #a2n_card_container .card_item-lists {
+        text-align: left;
+        margin-top: 30px;
+      }
+      #a2n_card_container .card_item-lists ul {
+        margin: 0px;
+        text-align: left;
+        padding: 0px;
+      }
+      #a2n_card_container .card_item-lists ul > li {
+        text-align: left;
+        color: #fff;
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 400;
+        list-style: none;
+        margin-bottom: 20px;
+      }
+      #a2n_card_container .card_item-lists ul > li > .card_icon {
+        margin-right: 10px;
+      }
+      #a2n_card_container .card_item-lists ul li:last-child {
+        margin-bottom: 60px;
+      }
+      #a2n_card_container .card_button-1 {
+        color: #fff;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 10px 40px;
+        background: transparent;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        transition: 0.1s linear;
+      }
+      #a2n_card_container .card_button-1:hover {
+        color: #fff;
+        background: linear-gradient(90deg, #004680 0%, #4484ba 100%);
+        border: 2px solid #4484ba;
+      }
+      #a2n_card_container .card_header > h3 {
+        color: #fff;
+        font-family: Work Sans;
+        font-size: 60px;
+        font-weight: 700;
+        padding: 14px 0;
+      }
+      #a2n_card_container .card_header > hr {
+        width: 323px;
+        height: 3px;
+        background: #fff;
+        margin: 0 auto;
+      }
+      #a2n_card_container .card_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #a2n_card_container .card_footer p {
+        color: #2c8cf0;
+        text-align: center;
+        font-family: Inter;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 95%; /* 30.4px */
+        margin: 0;
+      }
+      #a2n_card_container .card_footer p > del {
+        color: #666;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 95%; /* 22.8px */
+        text-decoration-line: strikethrough;
+        margin-right: 5px;
+      }
+      #a2n_card_container .card_button-2 {
+        color: #2c8cf0;
+        text-align: center;
+        font-family: Inter;
+        font-size: 32px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 2px solid #2c8cf0;
+        background: rgba(82, 21, 87, 0);
+        transition: 0.1s linear;
+      }
+      #a2n_card_container .card_button-2:hover {
+        color: #fff;
+        background: linear-gradient(90deg, #004680 0%, #4484ba 100%);
+        border: 2px solid #4484ba;
+      }
+
+      #a2n_step-card .card-parents {
+        position: relative;
+        margin-bottom: 28px;
+      }
+      #a2n_step-card .card-child {
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+        background-color: #dbf4ff;
+        border: 1px solid #173e88;
+        width: 570px;
+        height: 96px;
+        border-radius: 38px;
+        color: #2d3748;
+        font-family: Inter;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 150%; /* 42px */
+      }
+      #a2n_step-card .card-child2 {
+        padding-left: 42px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 0) 0%,
+          rgba(239, 251, 255, 1) 100%
+        );
+        height: 98px;
+        width: 570px;
+      }
+      #a2n_step-card .step-2 > .card-child {
+        padding-left: 200px;
+      }
+      #a2n_step-card .step-2 .card-child2 {
+        background: linear-gradient(
+          114deg,
+          rgba(243, 252, 255, 1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+      @media only screen and (max-width: 667px) {
+        #a2n_step-card .card-child {
+          padding-left: 0px;
+          width: 300px;
+          height: 96px;
+          font-size: 12px;
+          margin: 0 auto;
+          justify-content: center;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        #a2n_step-card .card-child2 {
+          display: none;
+          visibility: hidden;
+        }
+        #a2n_step-card .card-child {
+          padding-left: 40px;
+          width: 350px;
+          height: 96px;
+          font-size: 18px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="a2n_step-card">
+      <div class="card-parents">
+        <div class="card-child">Step 1: Join our Community.</div>
+        <div class="card-child2"></div>
+      </div>
+      <div class="card-parents step-2">
+        <div class="card-child">Step 1: Join our Community.</div>
+        <div class="card-child2"></div>
+      </div>
+      <div class="card-parents">
+        <div class="card-child">Step 1: Join our Community.</div>
+        <div class="card-child2"></div>
+      </div>
+    </div>
+
+    <div id="a2n_card_container">
+      <div class="card_header">
+        <a href="#" class="card_button-1">Monthly</a>
+        <h3>Cloud Plus</h3>
+        <hr />
+      </div>
+      <div class="card_item-lists">
+        <ul>
+          <li>
+            <div class="card_icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_558_690)">
+                  <rect
+                    y="0.580078"
+                    width="20"
+                    height="20"
+                    rx="10"
+                    fill="#35C22A"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.7709 10.0398C12.9176 10.1807 13 10.3717 13 10.5708C13 10.77 12.9176 10.961 12.7709 11.1019L8.34511 15.3508C8.27294 15.4225 8.18661 15.4797 8.09116 15.5191C7.9957 15.5585 7.89304 15.5792 7.78916 15.58C7.68528 15.5809 7.58226 15.5619 7.48611 15.5241C7.38996 15.4864 7.30261 15.4306 7.22915 15.3601C7.15569 15.2896 7.0976 15.2057 7.05826 15.1134C7.01892 15.0211 6.99913 14.9222 7.00003 14.8225C7.00093 14.7227 7.02251 14.6242 7.06352 14.5325C7.10452 14.4409 7.16412 14.358 7.23885 14.2887L11.1115 10.5708L7.23885 6.85296C7.09633 6.7113 7.01747 6.52157 7.01926 6.32464C7.02104 6.12771 7.10332 5.93932 7.24838 5.80007C7.39343 5.66081 7.58966 5.58182 7.79479 5.58011C7.99993 5.5784 8.19755 5.6541 8.34511 5.79092L12.7709 10.0398Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_558_690">
+                    <rect
+                      y="0.580078"
+                      width="20"
+                      height="20"
+                      rx="10"
+                      fill="white"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            Access to All Single Courses
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_558_690)">
+                <rect
+                  y="0.580078"
+                  width="20"
+                  height="20"
+                  rx="10"
+                  fill="#35C22A"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.7709 10.0398C12.9176 10.1807 13 10.3717 13 10.5708C13 10.77 12.9176 10.961 12.7709 11.1019L8.34511 15.3508C8.27294 15.4225 8.18661 15.4797 8.09116 15.5191C7.9957 15.5585 7.89304 15.5792 7.78916 15.58C7.68528 15.5809 7.58226 15.5619 7.48611 15.5241C7.38996 15.4864 7.30261 15.4306 7.22915 15.3601C7.15569 15.2896 7.0976 15.2057 7.05826 15.1134C7.01892 15.0211 6.99913 14.9222 7.00003 14.8225C7.00093 14.7227 7.02251 14.6242 7.06352 14.5325C7.10452 14.4409 7.16412 14.358 7.23885 14.2887L11.1115 10.5708L7.23885 6.85296C7.09633 6.7113 7.01747 6.52157 7.01926 6.32464C7.02104 6.12771 7.10332 5.93932 7.24838 5.80007C7.39343 5.66081 7.58966 5.58182 7.79479 5.58011C7.99993 5.5784 8.19755 5.6541 8.34511 5.79092L12.7709 10.0398Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_558_690">
+                  <rect
+                    y="0.580078"
+                    width="20"
+                    height="20"
+                    rx="10"
+                    fill="white"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            Discount on Certificates & Transcripts
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_558_690)">
+                <rect
+                  y="0.580078"
+                  width="20"
+                  height="20"
+                  rx="10"
+                  fill="#35C22A"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.7709 10.0398C12.9176 10.1807 13 10.3717 13 10.5708C13 10.77 12.9176 10.961 12.7709 11.1019L8.34511 15.3508C8.27294 15.4225 8.18661 15.4797 8.09116 15.5191C7.9957 15.5585 7.89304 15.5792 7.78916 15.58C7.68528 15.5809 7.58226 15.5619 7.48611 15.5241C7.38996 15.4864 7.30261 15.4306 7.22915 15.3601C7.15569 15.2896 7.0976 15.2057 7.05826 15.1134C7.01892 15.0211 6.99913 14.9222 7.00003 14.8225C7.00093 14.7227 7.02251 14.6242 7.06352 14.5325C7.10452 14.4409 7.16412 14.358 7.23885 14.2887L11.1115 10.5708L7.23885 6.85296C7.09633 6.7113 7.01747 6.52157 7.01926 6.32464C7.02104 6.12771 7.10332 5.93932 7.24838 5.80007C7.39343 5.66081 7.58966 5.58182 7.79479 5.58011C7.99993 5.5784 8.19755 5.6541 8.34511 5.79092L12.7709 10.0398Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_558_690">
+                  <rect
+                    y="0.580078"
+                    width="20"
+                    height="20"
+                    rx="10"
+                    fill="white"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            Free Unlimited Retake Exams & Assessment Checking
+          </li>
+          <li>
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+              >
+                <g id="radix-icons:cross-2">
+                  <rect
+                    y="0.580078"
+                    width="20"
+                    height="20"
+                    rx="10"
+                    fill="#C22A2A"
+                  ></rect>
+                  <path
+                    id="Vector"
+                    d="M14 14.5801L6 6.58008M14 6.58008L6 14.5801"
+                    stroke="white"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                  ></path>
+                </g></svg
+            ></span>
+            Yearly 15 Free Certificates & Transcripts
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <g id="radix-icons:cross-2">
+                <rect
+                  y="0.580078"
+                  width="20"
+                  height="20"
+                  rx="10"
+                  fill="#C22A2A"
+                ></rect>
+                <path
+                  id="Vector"
+                  d="M14 14.5801L6 6.58008M14 6.58008L6 14.5801"
+                  stroke="white"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                ></path>
+              </g>
+            </svg>
+            Exclusive Access to Career Path Bundles
+          </li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <g id="radix-icons:cross-2">
+                <rect
+                  y="0.580078"
+                  width="20"
+                  height="20"
+                  rx="10"
+                  fill="#C22A2A"
+                ></rect>
+                <path
+                  id="Vector"
+                  d="M14 14.5801L6 6.58008M14 6.58008L6 14.5801"
+                  stroke="white"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                ></path>
+              </g>
+            </svg>
+            Special Study Resources & Materials
+          </li>
+        </ul>
+      </div>
+      <div class="card_footer">
+        <p><del>£267</del>£79</p>
+        <a href="#" class="card_button-2">Start</a>
+      </div>
+    </div>
+  </body>
+</html>

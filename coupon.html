@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+  </head>
+  <body>
+    <style>
+      .a2n_copy-card .coupon-icon {
+        height: 100%;
+        width: 50px;
+        text-align: center;
+        border-right: 1.33174px solid rgba(0, 0, 0, 0.16);
+      }
+
+      .a2n_copy-card .coupon-icon img {
+        padding-top: 16px;
+        padding-right: 10px;
+      }
+
+      .a2n_copy-card button#btnTest1 img {
+        margin-top: -4px;
+        padding-right: 5px;
+        display: inline-block;
+      }
+
+      .a2n_copy-card button#btnTest1 span {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .a2n_copy-card .foy-button {
+        width: 100%;
+        max-width: 450px;
+        height: 60px;
+        border: 1.33174px solid #42a5ed26;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        background-color: #fff !important;
+        padding: 0 10px;
+      }
+
+      .a2n_copy-card input#fTest1 {
+        width: 70%;
+        font-size: 22px;
+        font-family: "poppins";
+        font-style: normal;
+        font-weight: 600;
+        align-items: center;
+        text-align: center;
+        color: #184466;
+        background: #ffffff;
+        box-sizing: border-box;
+
+        border: transparent !important;
+        border-radius: 8px 0px 0px 8px;
+      }
+
+      .a2n_copy-card button#btnTest1 {
+        border: none;
+        width: 30%;
+        height: 46px !important;
+        border-radius: 5px;
+        background: linear-gradient(180deg, #962611 0%, #581710 140.74%);
+        border-radius: 9.1181px;
+        font-family: "poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
+        display: inline-block;
+      }
+
+      .a2n_copy-card #demo1 {
+        font-family: "poppins";
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 14px;
+        line-height: 30px;
+        margin-top: 10px;
+        color: #fff;
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .a2n_copy-card .foy-button {
+          width: 90%;
+        }
+        .a2n_copy-card input#fTest {
+          height: 45px !important;
+          width: 70%;
+        }
+        .a2n_copy-card button#btnTest {
+          height: 45px !important;
+          font-weight: 500;
+          width: 30%;
+        }
+        .a2n_copy-card button#btnTest1 {
+          width: 40%;
+        }
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 767px) {
+        .a2n_copy-card .foy-button {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+        .a2n_copy-card button#btnTest {
+          height: 45px !important;
+          font-weight: 500;
+        }
+        .a2n_copy-card .foy-button {
+          width: 100% !important;
+          margin: 0 auto;
+        }
+        .a2n_copy-card button#btnTest1 {
+          width: 50%;
+        }
+      }
+    </style>
+    <div class="a2n_copy-card">
+      <div class="foy-button">
+        <div class="coupon-icon">
+          <img
+            src="https://www.eustoncollege.co.uk/wp-content/uploads/2023/03/Promo-Code.png"
+          />
+        </div>
+        <input id="fTest1" type="text" value="COUPON" readonly="" />
+        <button onclick="myFunction()" id="btnTest1">
+          <img
+            src="https://www.eustoncollege.co.uk/wp-content/uploads/2023/03/clipboard-outline-1.png"
+          />
+          <span>Copy</span>
+        </button>
+      </div>
+      <p id="demo1"></p>
+    </div>
+    <script type="text/javascript">
+      const fTest1 = document.getElementById("fTest1");
+      const btnTest1 = document.getElementById("btnTest1");
+
+      btnTest1.onclick = function () {
+        fTest1.select();
+        document.execCommand("Copy");
+        document.getElementById("demo1").innerHTML =
+          "Congratulations! You've copied this coupon.";
+      };
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+.foy-tm-card .save {
+  text-align: right !important;
+}
+
+.foy-tm-card .amounteb {
+  text-align: left !important;
+}
+.foy-tm-card .quantity-sec1 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px !important;
+}
+.foy-tm-card .price1 {
+  font-family: "Poppins";
+  font-size: 24px !important;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #33385a;
+}
+.foy-tm-card .price1 span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+.foy-tm-card .unit-price-text {
+  font-weight: 400 !important;
+}
+.foy-tm-card .total {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #848199;
+}
+.foy-tm-card .total-price1 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #33385a;
+}
+.foy-tm-card .quantity-sec1 h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  color: #515151;
+}
+.foy-tm-card button.button1 {
+  height: 42px;
+  width: 42px;
+  font-size: 20px;
+  line-height: 0;
+  color: #7ba631;
+  border: 1px solid #fecd03;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 10px;
+}
+.foy-tm-card input#demoInput1 {
+  width: 150px;
+  height: 42px;
+  text-align: center;
+  border: 1px solid #fecd03;
+  background: #ffffff;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.13);
+  border-radius: 3px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #33385a;
+}
+.foy-tm-card .sa_ctm_btn1 {
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #fecd03;
+  color: #fff !important;
+  font-size: 18px;
+  border-radius: 5px;
+  font-family: "Poppins" !important;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fecd03;
+}
+
+.foy-tm-card .sa_ctm_btn1:hover {
+  color: #000000 !important;
+}
+.foy-cln {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #33385a;
+  opacity: 0.7;
+}
+
+.displayed-price .disone,
+.displayed-price .distwo,
+.displayed-price .disthree {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.displayed-price .disone,
+.displayed-price .distwo,
+.displayed-price .disthree {
+  margin: 10px 0;
+  border: 1px solid #fecd03;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.displayed-price {
+  margin-bottom: 35px;
+}
+
+.displayed-price .disone h3,
+.displayed-price .distwo h3,
+.displayed-price .disthree h3 {
+  margin: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #33385a;
+}
+
+.displayed-price .disone:hover h3,
+.displayed-price .distwo:hover h3,
+.displayed-price .disthree:hover h3 {
+  color: #fff;
+}
+
+.displayed-price .disone h2,
+.displayed-price .distwo h2,
+.displayed-price .disthree h2 {
+  margin: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #33385a;
+}
+
+.displayed-price .disone:hover h2,
+.displayed-price .distwo:hover h2,
+.displayed-price .disthree:hover h2 {
+  color: #fff;
+}
+
+.displayed-price .disone:hover,
+.displayed-price .distwo:hover,
+.displayed-price .disthree:hover {
+  background: #fecd03;
+  border-color: #fff;
+}
+.foy-cfg .active {
+  background: #fecd03;
+  border-color: #fff;
+}
+.foy-cfg .active h2,
+.foy-cfg .active h3 {
+  color: #ffffff !important;
+}
+.displayed-price .disone,
+.displayed-price .distwo,
+.displayed-price .disthree {
+  margin: 10px 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .foy-tm-card .quantity-sec1 {
+    margin-top: 20px;
+  }
+  .foy-tm-card button.button1 {
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+  }
+  .foy-tm-card input#demoInput {
+    width: 150px;
+    height: 40px;
+  }
+  .foy-tm-card .sa_ctm_btn {
+    width: 240px;
+    height: 45px;
+    font-size: 16px;
+  }
+  .foy-tm-card .tableOne td {
+    padding: 12px 0px 12px 20px !important;
+  }
+  .foy-tm-card .col-md-6 {
+    padding: 0px;
+  }
+  .foy-tm-card .col-md-4 {
+    padding: 0px;
+  }
+  .foy-tm-card .tableOne td {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .foy-tm-card .quantity-sec1 {
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+  /* .quantity-sec1 {
+      margin-right: 28px;
+    } */
+}

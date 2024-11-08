@@ -1,0 +1,95 @@
+/* 
+
+#1 add this class on Html user_box div 
+#2 icon_box class have to remove margin left
+#3 displayBox width will be 160px and
+#4 displayName should a space.
+
+*/
+.displayBox {
+  width: 160px;
+}
+/* if search bar has  */
+@media (max-width: 1170px) {
+  .displayBox {
+    width: 120px;
+  }
+}
+@media (max-width: 499px) {
+  .displayBox {
+    width: 60px;
+  }
+}
+/* Common forms css start by Nabil  */
+.gform_wrapper .gform_fields input[type="text"],
+.gform_wrapper .gform_fields input.large,
+.gform_wrapper .gform_fields input.medium,
+.gform_wrapper .gform_fields select,
+.gform_wrapper .gform_fields textarea,
+.ginput_card_field {
+  height: 44px !important;
+  border-radius: 8px;
+  border: 1px solid #caced8;
+  background: #fff;
+  color: #2b354e;
+  font-family: "Poppins", Sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.6px;
+  padding: 12px !important;
+  outline: none;
+}
+.gform_wrapper .gform_fields select {
+  padding: 0 12px !important;
+}
+.gform_wrapper .gform_fields textarea {
+  height: 150px !important;
+}
+.gform_wrapper .gform_fields .button,
+.gform_footer input[type="submit"] {
+  padding: 0 30px;
+  height: 42px;
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px !important;
+  font-weight: 700;
+  color: #2b354e !important;
+  background-color: transparent !important;
+  border: 2px solid #2b354e !important;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.gform_wrapper .gform_fields .button:hover,
+.gform_footer input[type="submit"]:hover {
+  background-color: #2b354e !important;
+  color: #fff !important;
+}
+.gform_wrapper .gform_fields .gfield_label {
+  margin: 0 0 8px;
+  color: #2b354e;
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height: 19.6px;
+}
+.gform_wrapper .gform_fields .gform-field-label--type-inline,
+.gform_wrapper .gform_fields .gform-field-label--type-sub {
+  color: #2b354e;
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px !important;
+  font-weight: 400;
+}
+.gform_wrapper .gform_fields input.gform-text-input-reset,
+.gform_wrapper .gform_fields .ginput_total {
+  padding: 0 !important;
+  color: #2b354e;
+  font-family: "Poppins", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  height: auto !important;
+  border: 0;
+}
+.gform_wrapper .gform_fields input.ginput_product_price {
+  border: 0;
+  padding-left: 8px !important;
+}
+/* Common forms css end by Nabil  */

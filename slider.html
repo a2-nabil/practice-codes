@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slider</title>
+    <style>
+      /* card css start */
+      .a2n_course-card #courses_content {
+        width: 340px;
+        padding: 18px 18px 10px 18px;
+        border-radius: 16.835px;
+        background: #fff;
+        box-shadow: 4.20869px 3.36695px 20.20169px 0px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        transition: 0.1s ease-in;
+        margin: 0 auto !important;
+        overflow: hidden;
+      }
+      .a2n_course-card #courses_content img {
+        border-radius: 20px;
+        /*margin: 20px auto;*/
+      }
+      .a2n_course-card #courses_content .courses_items {
+        padding-right: 10px;
+        padding-bottom: 20px;
+      }
+      .a2n_course-card .courses_container {
+        position: relative;
+
+        /*width: 368px;*/
+      }
+      .a2n_course-card .courses_container .courses_bottom-shape {
+        position: absolute;
+        width: 290px;
+        height: 67.339px;
+        bottom: -10px;
+        left: 50%;
+        border-radius: 16.835px;
+        background: #fff;
+        box-shadow: 0px 4.20869px 42.08686px 4.20869px rgba(0, 0, 0, 0.15);
+        z-index: -1;
+        transition: 0.1s ease-in;
+        transform: translateX(-50%);
+      }
+      .a2n_course-card #courses_content .courses_title {
+        color: #264e9a;
+        font-family: Inter, serif;
+        font-size: 19px;
+        font-weight: 600;
+        padding-bottom: 20px;
+      }
+      .a2n_course-card #courses_content .inner_items {
+        display: flex;
+        column-gap: 30px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .a2n_course-card #courses_content .inner_items p {
+        color: #6c778a;
+        font-family: Inter, serif;
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0 !important;
+      }
+      .a2n_course-card #courses_content .courses_ratings {
+        color: #494747;
+        font-family: Inter, serif;
+        font-size: 18px;
+        font-weight: 400;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #d9d9d9;
+      }
+      .a2n_course-card #courses_content .courses_ratings > span {
+        color: #ffb800;
+        font-family: Inter, serif;
+        font-size: 18px;
+        font-weight: 900;
+        padding-right: 5px;
+      }
+      .a2n_course-card #courses_content .courses_end > p {
+        color: #2d3748;
+        font-family: Inter, serif;
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 0 !important;
+      }
+      .a2n_course-card #courses_content .courses_end > p > del {
+        color: #6c778a;
+        font-family: Inter, serif;
+        font-size: 24px;
+        font-weight: 400;
+        text-decoration-line: strikethrough;
+        padding-right: 4px;
+        opacity: 1;
+      }
+      .a2n_course-card #courses_content .courses_end {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .a2n_course-card #courses_content .main_button {
+        padding: 15px 33px;
+        border-radius: 30px;
+        background: linear-gradient(90deg, #004680 0%, #4484ba 100%);
+        border: none;
+        color: #fff;
+        text-decoration: none;
+        font-family: Inter, serif;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .a2n_course-card #courses_content:hover,
+      .a2n_course-card #courses_content:hover + .courses_bottom-shape {
+        background: #041c4a;
+      }
+      .a2n_course-card #courses_content:hover,
+      .a2n_course-card #courses_content:hover .courses_title,
+      .a2n_course-card #courses_content:hover .inner_items p,
+      .a2n_course-card #courses_content:hover .courses_ratings,
+      .a2n_course-card #courses_content:hover .courses_end > p,
+      .a2n_course-card #courses_content:hover .courses_end > p > del {
+        color: #fff;
+        opacity: 1;
+      }
+      .a2n_course-card #courses_content:hover .main_button {
+        background: linear-gradient(90deg, #00c6fb 0%, #005bea 100%);
+      }
+      /* card css end */
+      .a2n_slider-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background: #f5f5ff;
+        margin-top: -1.9em;
+        position: relative;
+      }
+
+      .a2n_slider-container .slidesContainer {
+        height: auto;
+        max-width: 1170px;
+        margin: 1em 0;
+        overflow: hidden;
+        
+      }
+
+      .a2n_slider-container .slider {
+        height: auto;
+        width: 100%;
+        margin: 2.5em 0em;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        
+      }
+
+      .a2n_slider-container .slide {
+        height: auto;
+        min-width: 360px;
+        margin: 0 15px;
+      }
+
+      .a2n_slider-container .btnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .a2n_slider-container .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1em;
+        border: none;
+        width: 55px;
+        height: 55px;
+        font-size: 40px;
+        cursor: pointer;
+        background: transparent;
+        position: absolute;
+        top: 45%;
+      }
+      .a2n_slider-container .btn.prev{
+        left: 10%;
+      }
+      .a2n_slider-container .btn.next{
+        left: auto;
+        right: 10%;
+     
+      }
+
+      @media screen and (min-width: 736px) and (max-width: 1100px) {
+        .a2n_slider-container .slidesContainer {
+          width: 38.9em;
+        }
+      }
+      @media screen and (max-width: 736px) {
+        .a2n_slider-container .slidesContainer {
+          width: 19.3em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a2n_slider-container a2n_course-card">
+      <div class="slidesContainer">
+        <div class="slider">
+          <div class="slide slide1">
+            <div style="margin-bottom: 44px" class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+            <div class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+          </div>
+          <div class="slide slide2">
+            <div style="margin-bottom: 44px" class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+            <div class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+          </div>
+          <div class="slide slide3">
+            <div style="margin-bottom: 44px" class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+            <div class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+          </div>
+          <div class="slide slide4">
+            <div style="margin-bottom: 44px" class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+            <div class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+          </div>
+          <div class="slide slide5">
+            <div style="margin-bottom: 44px" class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+            <div class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+          </div>
+          <div class="slide slide6">
+            <div style="margin-bottom: 44px" class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+            <div class="courses_container">
+              <div id="courses_content">
+                <img
+                  class="courses_img"
+                  src="https://coursecloud.org/wp-content/uploads/2023/11/image-64.png"
+                  alt=""
+                />
+                <div class="courses_items">
+                  <h4 class="courses_title">Spanish Language Masterclass</h4>
+                  <div class="inner_items">
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Frame-83.svg"
+                        alt=""
+                      />
+                      125 Student
+                    </p>
+                    <p>
+                      <img
+                        src="https://coursecloud.org/wp-content/uploads/2023/11/Group-42.svg"
+                        alt=""
+                      />
+                      9 hr +
+                    </p>
+                  </div>
+                  <h5 class="courses_ratings">
+                    <span
+                      ><i class="fa fa-star" aria-hidden="true"></i> 5.0</span
+                    >
+                    (15)
+                  </h5>
+
+                  <div class="courses_end">
+                    <p><del>£50</del>£25</p>
+                    <a href="#" class="main_button">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="courses_bottom-shape"></div>
+            </div>
+          </div>
+        </div>
+        <div class="btnContainer">
+          <button class="btn prev"><img src="https://coursecloud.org/wp-content/uploads/2023/11/Group-60.svg" alt=""></button>
+          <button class="btn next"><img src="https://coursecloud.org/wp-content/uploads/2023/11/direction-right-01.svg" alt=""></button>
+        </div>
+      </div>
+    </div>
+
+    <!--a2n slider js  -->
+    <script>
+      const next = document.querySelector(".next");
+      const prev = document.querySelector(".prev");
+      const Slides = document.querySelectorAll(".slide");
+      const Sliders = document.querySelectorAll(".slider");
+      console.log(Sliders);
+      let counter = 0;
+      next.addEventListener("click", function () {
+        counter++;
+        slide();
+      });
+      prev.addEventListener("click", function () {
+        counter--;
+
+        slide();
+      });
+
+      function slide() {
+        var s = Slides.length;
+        var x = window.matchMedia("(min-width: 736px) and (max-width: 1100px)");
+        var z = window.matchMedia("(min-width: 1100px)");
+
+        if (x.matches) {
+          s = s - 1;
+
+          if (counter >= s) {
+            counter = 0;
+          }
+          if (counter === s) {
+            counter = 0;
+          }
+          if (counter < 0) {
+            counter = s - 1;
+          }
+        }
+        if (z.matches) {
+          s = s - 2;
+          if (counter >= s) {
+            counter = 0;
+          }
+          if (counter === s) {
+            counter = 0;
+          }
+          if (counter < 0) {
+            counter = 1;
+          }
+          // console.log(counter);
+        }
+
+        if (counter === s) {
+          counter = 0;
+        }
+        if (counter < 0) {
+          counter = s - 1;
+        }
+        console.log(counter);
+        Sliders.forEach(function (slider) {
+          slider.style.transform = `translateX(-${counter * 395}px)`;
+        });
+      }
+    </script>
+  </body>
+</html>

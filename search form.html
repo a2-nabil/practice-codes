@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    *{
+        text-decoration: none;
+        list-style: none;
+    }
+    .a2n_search-form ul {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  width: 570px;
+  height: 72px;
+  background: #fff;
+  fill: #fff;
+  stroke: rgba(171, 206, 228, 0.3);
+  stroke-width: 3px;
+  filter: drop-shadow(
+    0px 4.217228412628174px 21.08614158630371px rgba(236, 238, 255, 0.5)
+  );
+  border-radius: 50px;
+}
+.a2n_search-form ul > li:first-child {
+  width: 60%;
+}
+.a2n_search-form ul > li:last-child {
+  width: 30%;
+}
+.a2n_search-form ul #s {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid white !important;
+  border-radius: 10px;
+  max-width: 400px;
+}
+.a2n_search-form ul li:first-child::before {
+    content: url('https://coursecloud.org/wp-content/uploads/2023/11/Vector-1.svg');
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.a2n_search-form ul #s::placeholder {
+  color: #6c778a;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.a2n_search-form #searchsubmit {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 32px;
+  background: linear-gradient(90deg, #004680 0%, #4484ba 100%);
+  padding: 20px 40px;
+  border: none;
+  transition: 0.3s ease-in;
+}
+.a2n_search-form #searchsubmit:hover {
+  color: #004680;
+  background: transparent;
+  border: 1px solid #004680;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .a2n_search-form ul {
+    width: 100%;
+    padding: 4px;
+    overflow: hidden;
+  }
+  .a2n_search-form ul #searchsubmit {
+    padding: 8px 22px 8px 22px !important;
+    font-size: 14px;
+    line-height: 100%; /* 21.6px */
+  }
+  .a2n_search-form ul #s::placeholder {
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
+
+</style>
+<body>
+
+
+    <div class="a2n_search-form">
+        <ul>
+            <li><input type="text" id="s"></li>
+            <li><input type="submit" id="searchsubmit"></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

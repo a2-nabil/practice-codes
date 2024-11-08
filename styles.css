@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* NextGen Bundle Course section start */
+#a2n_bundle-course .bundle-container {
+  width: 290px;
+  border-radius: 30px;
+  border: 0.745px solid #e6eaee;
+  background: #fff;
+  overflow: hidden;
+}
+#a2n_bundle-course .bundle-contents {
+  padding: 18px 14px 18px 14px;
+}
+#a2n_bundle-course .bundle-contents .bundle_tip {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 58.707px;
+  background: #e8f8ff;
+  padding: 5.032px 12.58px;
+  color: #5b3485;
+  font-family: IBM Plex Sans;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+#a2n_bundle-course .bundle-contents h3 {
+  margin-top: 8px;
+  color: #2b354e;
+  font-family: IBM Plex Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+#a2n_bundle-course .bundle-contents h6 {
+  color: #fe7e41;
+  font-family: Plus Jakarta Sans;
+  font-size: 19.373px;
+  font-weight: 800;
+  line-height: 22px;
+}
+#a2n_bundle-course .bundle-contents h6 del {
+  color: #fe7e41;
+  font-family: Plus Jakarta Sans;
+  font-size: 14.902px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-right: 5px;
+  opacity: 0.6;
+}
+#a2n_bundle-course .bundle-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 0px 28px 28px;
+  background: #f3f3ff;
+  padding: 14.16px 0px;
+}
+#a2n_bundle-course .bundle-end .bundle_button-1,
+#a2n_bundle-course .bundle-end .bundle_button-2 {
+  display: flex;
+  width: 108px;
+  padding: 8.941px 32.784px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #2b354e;
+  font-family: IBM Plex Sans;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 18px;
+  border: 0.745px solid #e2e8f0;
+  background: #fff;
+  transition: 0.3s ease;
+}
+#a2n_bundle-course .bundle-end .bundle_button-2 {
+  background: #FE7E41;
+  color: #fff;
+  padding: 8.941px 0px;
+}
+#a2n_bundle-course .bundle-end .bundle_button-2:hover {
+  background: #fff;
+  color: #2b354e;
+}
+#a2n_bundle-course .bundle-end .bundle_button-1:hover {
+  color: #fff;
+  background: #FE7E41;
+}
+
+/* NextGen Bundle Course section end
+ *//*# sourceMappingURL=styles.css.map */

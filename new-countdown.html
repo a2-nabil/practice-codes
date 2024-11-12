@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latest</title>
+  </head>
+  <style>
+    .a2n_countdown {
+      max-width: 448px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      gap: 14px;
+    }
+    .a2n_countdown-item {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+    .a2n_countdown-item {
+      background-color: #6fac6945;
+      border-radius: 22px 22px 22px 22px;
+      padding: 20px 20px 20px 20px;
+    }
+    .a2n_countdown-item span {
+      display: block;
+      text-align: center;
+    }
+    .a2n_countdown-item span.a2n_countdown-digits {
+      color: #000000;
+      font-family: "Roboto", popins;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 42px;
+    }
+
+    .a2n_countdown-item span.a2n_countdown-label {
+      color: #000000;
+      font-family: "Roboto Slab", popins;
+      font-size: 17px;
+      font-weight: 600;
+    }
+  </style>
+
+  <body>
+    <div class="a2n_countdown">
+      <div class="a2n_countdown-item">
+        <span class="a2n_countdown-digits a2n_countdown-days">00</span>
+        <span class="a2n_countdown-label">Days</span>
+      </div>
+      <div class="a2n_countdown-item">
+        <span class="a2n_countdown-digits a2n_countdown-hours">00</span>
+        <span class="a2n_countdown-label">Hours</span>
+      </div>
+      <div class="a2n_countdown-item">
+        <span class="a2n_countdown-digits a2n_countdown-minutes">00</span>
+        <span class="a2n_countdown-label">Minutes</span>
+      </div>
+      <div class="a2n_countdown-item">
+        <span class="a2n_countdown-digits a2n_countdown-seconds">00</span>
+        <span class="a2n_countdown-label">Seconds</span>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const daysElement = document.querySelector(".a2n_countdown-days");
+        const hoursElement = document.querySelector(".a2n_countdown-hours");
+        const minutesElement = document.querySelector(".a2n_countdown-minutes");
+        const secondsElement = document.querySelector(".a2n_countdown-seconds");
+
+        // Set the number of hours for a2n_countdown
+        const nxtCountdown = 13;
+
+        // Convert the hours into seconds (a2n_countdown duration)
+        let nxtCountdownDuration = nxtCountdown * 60 * 60; // hours to seconds
+
+        function startNxtCountdown() {
+          let timeRemaining = nxtCountdownDuration;
+
+          const nxtCountdownInterval = setInterval(function () {
+            const days = Math.floor(timeRemaining / (60 * 60 * 24));
+            const hours = Math.floor(
+              (timeRemaining % (60 * 60 * 24)) / (60 * 60)
+            );
+            const minutes = Math.floor((timeRemaining % (60 * 60)) / 60);
+            const seconds = Math.floor(timeRemaining % 60);
+
+            // Update the a2n_countdown display
+            daysElement.innerText = String(days).padStart(2, "0");
+            hoursElement.innerText = String(hours).padStart(2, "0");
+            minutesElement.innerText = String(minutes).padStart(2, "0");
+            secondsElement.innerText = String(seconds).padStart(2, "0");
+
+            // Decrease time remaining
+            timeRemaining -= 1;
+
+            // When the a2n_countdown reaches zero, restart it
+            if (timeRemaining <= 0) {
+              timeRemaining = nxtCountdownDuration; // Restart the a2n_countdown
+            }
+          }, 1000); // Update every second
+        }
+
+        // Start the a2n_countdown
+        startNxtCountdown();
+      });
+    </script>
+  </body>
+</html>

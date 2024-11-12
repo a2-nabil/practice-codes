@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        margin: 5px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      .timer {
+        font-size: 30px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Set Countdown Timer</h1>
+
+    <div>
+      <input type="number" id="days" placeholder="Days" />
+      <input type="number" id="hours" placeholder="Hours" />
+      <input type="number" id="minutes" placeholder="Minutes" />
+      <input type="number" id="seconds" placeholder="Seconds" />
+      <button onclick="startTimer()">Start Countdown</button>
+    </div>
+
+    <div class="timer" id="timerDisplay"></div>
+
+    <script>
+      let countdownTimer;
+
+      function startTimer() {
+        // Get user input values
+        const days = parseInt(document.getElementById("days").value) || 0;
+        const hours = parseInt(document.getElementById("hours").value) || 0;
+        const minutes = parseInt(document.getElementById("minutes").value) || 0;
+        const seconds = parseInt(document.getElementById("seconds").value) || 0;
+
+        // Convert the input time to total seconds
+        let totalSeconds =
+          days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
+
+        // Clear any existing countdown if the user restarts it
+        clearInterval(countdownTimer);
+
+        // Function to update the countdown
+        function updateTimer() {
+          if (totalSeconds <= 0) {
+            // Restart the countdown automatically once it hits zero
+            totalSeconds =
+              days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
+          }
+
+          // Calculate days, hours, minutes, and seconds left
+          const d = Math.floor(totalSeconds / (24 * 60 * 60));
+          const h = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
+          const m = Math.floor((totalSeconds % (60 * 60)) / 60);
+          const s = totalSeconds % 60;
+
+          // Display the countdown
+          document.getElementById(
+            "timerDisplay"
+          ).innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+
+          // Decrement totalSeconds by 1
+          totalSeconds--;
+        }
+
+        // Update the timer every second
+        countdownTimer = setInterval(updateTimer, 1000);
+      }
+    </script>
+  </body>
+</html>

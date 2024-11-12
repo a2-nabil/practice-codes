@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>elementor countdown</title>
+  </head>
+  <body>
+    <div
+      data-evergreen-interval="122"
+      class="elementor-countdown-wrapper"
+      data-date=""
+    >
+      <div class="elementor-countdown-item">
+        <span class="elementor-countdown-digits elementor-countdown-days"
+          >00</span
+        >
+        <span class="elementor-countdown-label">Days</span>
+      </div>
+      <div class="elementor-countdown-item">
+        <span class="elementor-countdown-digits elementor-countdown-hours"
+          >00</span
+        >
+        <span class="elementor-countdown-label">Hours</span>
+      </div>
+      <div class="elementor-countdown-item">
+        <span class="elementor-countdown-digits elementor-countdown-minutes"
+          >00</span
+        >
+        <span class="elementor-countdown-label">Minutes</span>
+      </div>
+      <div class="elementor-countdown-item">
+        <span class="elementor-countdown-digits elementor-countdown-seconds"
+          >00</span
+        >
+        <span class="elementor-countdown-label">Seconds</span>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select countdown elements
+        const countdownWrapper = document.querySelector(
+          ".elementor-countdown-wrapper"
+        );
+        const daysElement = countdownWrapper.querySelector(
+          ".elementor-countdown-days"
+        );
+        const hoursElement = countdownWrapper.querySelector(
+          ".elementor-countdown-hours"
+        );
+        const minutesElement = countdownWrapper.querySelector(
+          ".elementor-countdown-minutes"
+        );
+        const secondsElement = countdownWrapper.querySelector(
+          ".elementor-countdown-seconds"
+        );
+
+        // Get the original interval in seconds from the Elementor attribute
+        const originalInterval =
+          parseInt(countdownWrapper.getAttribute("data-evergreen-interval")) ||
+          3600;
+
+        // Check if all the countdown elements have initial values of 00
+        if (
+          daysElement.innerText === "00" &&
+          hoursElement.innerText === "00" &&
+          minutesElement.innerText === "00" &&
+          secondsElement.innerText === "00"
+        ) {
+          startCountdown(originalInterval);
+        }
+
+        function startCountdown(duration) {
+          let timeRemaining = duration;
+          let lastDays = null,
+            lastHours = null,
+            lastMinutes = null;
+
+          const countdownTimer = setInterval(() => {
+            // If time remaining is 0, restart the countdown
+            if (timeRemaining <= 0) {
+              timeRemaining = originalInterval; // Reset to original interval
+            }
+
+            // Calculate time values
+            const days = Math.floor(timeRemaining / 86400);
+            const hours = Math.floor((timeRemaining % 86400) / 3600);
+            const minutes = Math.floor((timeRemaining % 3600) / 60);
+            const seconds = timeRemaining % 60;
+
+            // Only update elements when their values change to avoid unnecessary updates
+            if (lastDays !== days) {
+              daysElement.innerText = String(days).padStart(2, "0");
+              lastDays = days;
+            }
+
+            if (lastHours !== hours) {
+              hoursElement.innerText = String(hours).padStart(2, "0");
+              lastHours = hours;
+            }
+
+            if (lastMinutes !== minutes) {
+              minutesElement.innerText = String(minutes).padStart(2, "0");
+              lastMinutes = minutes;
+            }
+
+            // Always update seconds
+            secondsElement.innerText = String(seconds).padStart(2, "0");
+
+            // Decrease time remaining
+            timeRemaining -= 1;
+          }, 1000); // Update every second
+        }
+      });
+    </script>
+  </body>
+</html>
